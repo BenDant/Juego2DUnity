@@ -6,7 +6,6 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 1250f; //Velocidad de movimiento del pj
-    private bool isFacingRight = true;   //representa el valor de mirar a la derecha
     private Rigidbody2D rb; //referencia al componente RigidBody del personaje
     
     private void Start()
@@ -25,10 +24,6 @@ public class CharacterMovement : MonoBehaviour
     {
       rb.velocity = new Vector2(velocity * Time.deltaTime, rb.velocity.y);
     }
-    //cambiamos la escala en el eje x para voltear al pj
-    private void Flip()
-    {
-      transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-      isFacingRight = !isFacingRight;
-    }
+    
+   
 }

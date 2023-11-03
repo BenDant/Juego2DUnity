@@ -19,7 +19,7 @@ public class CharacterAnimations : MonoBehaviour
         }
         else
         {
-            animator.SetBool("IsRowing", false);
+            animator.SetBool("IsRowing", false); //desactiva la animacion de remar
         }
     }
 }

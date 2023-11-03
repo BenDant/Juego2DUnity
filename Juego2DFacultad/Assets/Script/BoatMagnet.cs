@@ -8,7 +8,7 @@ public class BoatMagnet : MonoBehaviour
  /*cuando entre en colision*/
  private void OnCollisionEnter2D(Collision2D collision)
  {
-    if (collision.gameObject.name == "Boat")
+    if (collision.gameObject.name == "Boat" )
      {
         /*si el jugador colisiona con el bote*/
         collision.gameObject.transform.SetParent(transform);
