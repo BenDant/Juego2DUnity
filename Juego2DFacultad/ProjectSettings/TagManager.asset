@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - FIsh
+  - Boat
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Fishes
   - Water
   - UI
   - 
@@ -44,4 +45,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Fish
+    uniqueID: 3256088541
     locked: 0
