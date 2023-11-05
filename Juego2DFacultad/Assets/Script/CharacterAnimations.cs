@@ -23,7 +23,7 @@ public class CharacterAnimations : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.isTrigger==true && collision.CompareTag("FIsh") )
         {
@@ -34,8 +34,8 @@ public class CharacterAnimations : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {      
         animator.SetBool("IsFishing",false);
-        //Debug.Log("se ha desactivado");  
-    }  
+        Debug.Log("se ha desactivado");  
+    }  */
        /*private void OnMouseDown()    
       {
         animator.SetBool("IsFishing",false);
