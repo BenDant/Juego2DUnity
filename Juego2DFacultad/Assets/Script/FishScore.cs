@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class FishScore : MonoBehaviour
 {
-  [SerializeField] private GameObject efecto; 
-  private  void OnTriggerEnter2D(Collider2D other)
-     {
-      if(other.CompareTag("Boat"))
-      {
-        
-       Instantiate (efecto, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-        Debug.Log("esta chocando"); //CONFIRMAR QUE COLISIONE
+     public float resistance; //Cada pez tendra cierta resistencia al tirar de la caña
 
-      } 
-      
+     public void Catch(float pullTimes)
+     {
+      resistance -= pullTimes; //el valor es reducido para cada vez que el pescador tira de la caña
+      if(resistance <= 0)  //si los puntos llegan a 0
+      {
+        Destroy(this.gameObject); 
+        Debug.Log("se destruyo"); //CONFIRMAR QUE COLISIONE
+      }
      }
+
 }
      

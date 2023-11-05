@@ -7,7 +7,6 @@ public class FishSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] fishes; //creamos el Array fishes
     [SerializeField] private float minX, maxX, minY, maxY; //se crea un campo para el tamaño de la zona del generador
-    [SerializeField] private GameObject efecto; 
     void Start()
     {
         StartCoroutine(SpawnFish()); //se inicia la corrutina para generar peces
@@ -29,14 +28,8 @@ public class FishSpawner : MonoBehaviour
         }        
      }
 
-     private  void OnTriggerEnter2D(Collider2D Collider)
-     {
-      if(Collider.CompareTag("Boat"))
-      {
-        Instantiate (efecto, transform.position, Quaternion.identity);
-        Destroy(gameObject);     
-      }
-     }
+        
+     
 
 
     private void OnDrawGizmos()   //metodo para visualizar los bordes de la zona del generador

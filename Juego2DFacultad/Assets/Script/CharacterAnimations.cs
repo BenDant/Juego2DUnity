@@ -22,4 +22,22 @@ public class CharacterAnimations : MonoBehaviour
             animator.SetBool("IsRowing", false); //desactiva la animacion de remar
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.isTrigger==true && collision.CompareTag("FIsh") )
+        {
+            animator.SetBool("IsFishing",true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {      
+        animator.SetBool("IsFishing",false);
+        //Debug.Log("se ha desactivado");  
+    }  
+       /*private void OnMouseDown()    
+      {
+        animator.SetBool("IsFishing",false);
+        Debug.Log("se ha desactivado");*/
 }
