@@ -7,7 +7,7 @@ public class CatchingAction : MonoBehaviour
 {
 private GameObject catchArea = default; //el area en el que un pez puede ser atrapado
 private  bool catching = false; //la accion de atrapar los peces
-private float timeToCatch = 0.25f;  //cooldown para agarrar cada pez
+private float timeToCatch = 0.25f;  //sirve para regularizar el tiempo en el que se activa el area
 private float timer = 0f; //tiempo limitado en el que se activa el area para pescar 
 
     void Start()
@@ -19,11 +19,18 @@ private float timer = 0f; //tiempo limitado en el que se activa el area para pes
     {
         if(Input.GetKeyDown(KeyCode.Space)) //si se aprieta la barra espaciadora
         {
-           Catch();
-           //Debug.Log("aaaaa");
+           if (!catching) //solo si no se esta atrapando actualmente
+           { 
+                StartCatching();
+                //Debug.Log("esta tirando");
+           }
+            else // si ya se esta atrapando, reinicia el temporizador
+           {
+            ResetTimer();
+           }
         }
 
-        if(catching)
+        if(catching)  //reinicia la accion de atrapar
         {
             timer += Time.deltaTime;
             if(timer >= timeToCatch)
@@ -36,9 +43,22 @@ private float timer = 0f; //tiempo limitado en el que se activa el area para pes
             
     }
 
-    private void Catch()
+      private void StartCatching()
     {
         catching = true;
-        catchArea.SetActive(catching); //Se activa el area segun la variable catching
+        catchArea.SetActive(catching); //Se activa el área según la variable 'catching'
     }
+
+    private void StopCatching()
+    {
+        timer = 0;
+        catching = false;
+        catchArea.SetActive(catching);
+    }
+
+    private void ResetTimer()
+   {
+    timer = 0;
+   }
 }
+

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FIsh
   - Boat
+  - CatchArea
   layers:
   - Default
   - TransparentFX

@@ -172,3 +172,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resistance: 8
+  numberPoints: 30
+  score: {fileID: 0}
