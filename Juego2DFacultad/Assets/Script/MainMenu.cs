@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
  public void Play()
  {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1) ;  //pasa a la siguiente escena
+    SceneManager.LoadScene(1);  //pasa a la siguiente escena
  }   
 
  public void Exit()
